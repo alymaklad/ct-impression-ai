@@ -8,8 +8,6 @@ The project includes a Netlify-ready static homepage, a serverless metadata endp
 
 ![CT Impression AI deployment demo](public/deployment-demo-preview.gif)
 
-[Open the full deployment demo video](public/deployment-demo.mp4)
-
 ## What Is Included
 
 - `public/` contains the static homepage and deployment demo video.
