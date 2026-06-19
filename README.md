@@ -4,6 +4,12 @@ CT Impression AI is a deployment package for a 3D CT impression-generation syste
 
 The project includes a Netlify-ready static homepage, a serverless metadata endpoint, evaluation outputs, training code, and local Streamlit apps for running inference against the packaged model artifacts.
 
+## Demo Video
+
+<video src="https://github.com/alymaklad/m3d-lamed-impression-deployment/raw/main/public/deployment-demo.mp4" controls width="100%"></video>
+
+[Open the deployment demo video](https://github.com/alymaklad/m3d-lamed-impression-deployment/raw/main/public/deployment-demo.mp4)
+
 ## What Is Included
 
 - `public/` contains the static homepage and deployment demo video.
