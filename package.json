@@ -1,0 +1,15 @@
+{
+  "name": "m3d-lamed-impression-deployment",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Netlify-ready project package for the M3D-LaMed Phi-3 ResNet50 impression model.",
+  "scripts": {
+    "build": "node scripts/verify-project.mjs",
+    "dev": "netlify dev",
+    "verify": "node scripts/verify-project.mjs"
+  },
+  "devDependencies": {
+    "netlify-cli": "^17.38.1"
+  }
+}
+

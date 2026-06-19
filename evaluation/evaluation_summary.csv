@@ -1,0 +1,2 @@
+BLEU-1,BLEU-2,BLEU-3,BLEU-4,ROUGE-1,ROUGE-2,ROUGE-L,METEOR,CIDEr,BERTScore-P,BERTScore-R,BERTScore-F1,Clinical-Keyword-Coverage,Exact-Entity-Match-Rate,Avg-Reference-Length,Avg-Generated-Length,Length-Ratio
+0.1061,0.0628,0.0361,0.0208,0.1844,0.0700,0.1464,0.1493,0.0308,0.5846,0.5651,0.5683,0.2013,0.1070,36.4273,21.1293,1.3308

@@ -1,0 +1,19 @@
+node_modules/
+.netlify/
+.runtime/
+dist/
+build/
+.env
+.env.*
+*.log
+__pycache__/
+*.pyc
+.venv/
+.ipynb_checkpoints/
+~$*
+.DS_Store
+Thumbs.db
+
+# GitHub LFS has a 2 GB per-object limit. Keep the full merged LLM weight local
+# or host it externally.
+model/merged-huggingface/model.safetensors

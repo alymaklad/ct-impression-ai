@@ -1,0 +1,25 @@
+{
+  "project_name": "M3D-LaMed Impression Deployment",
+  "model_name": "M3D-LaMed Phi-3 ResNet50 Impression",
+  "base_model": "GoodBaiBai88/M3D-LaMed-Phi-3-4B",
+  "model_directory": "model/merged-huggingface",
+  "architecture": "LamedPhi3ForCausalLM",
+  "task": "3D CT impression generation",
+  "input_volume_shape": [32, 256, 256],
+  "training_volume_shape": [32, 128, 128],
+  "vision_encoder": "ResNet50 fine-tuned vision encoder",
+  "supporting_components": {
+    "clip_alignment": {
+      "training_code_directory": "training/clip-alignment",
+      "model_directory": "model/clip-alignment",
+      "evaluation_directory": "evaluation/clip-alignment"
+    },
+    "moco_resnet50": {
+      "training_code_directory": "training/moco-resnet50",
+      "model_directory": "model/moco-resnet50",
+      "evaluation_directory": "evaluation/moco-resnet50"
+    }
+  },
+  "deployment_target": "Netlify static site with external GPU inference backend recommended",
+  "large_file_storage": "Git LFS required for .safetensors, .pt, .pth, .bin, and .model files"
+}
