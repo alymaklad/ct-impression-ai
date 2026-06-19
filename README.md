@@ -1,83 +1,109 @@
-# M3D-LaMed Impression Deployment
+# CT Impression AI
 
-This repository packages the final M3D-LaMed Phi-3 ResNet50 impression model for GitHub and Netlify deployment.
+CT Impression AI is a deployment package for a 3D CT impression-generation system. It wraps a fine-tuned M3D-LaMed Phi-3 model and supporting research components so the project can be reviewed, demonstrated, and deployed from a clean GitHub repository.
 
-## Project Contents
+The project includes a Netlify-ready static homepage, a serverless metadata endpoint, evaluation outputs, training code, and local Streamlit apps for running inference against the packaged model artifacts.
 
-- `public/` contains the Netlify static site.
-- `netlify/functions/` contains the serverless metadata endpoint.
-- `model/merged-huggingface/` contains the final merged model configuration and supporting files using Hugging Face-compatible names.
+## What Is Included
+
+- `public/` contains the static homepage and deployment demo video.
+- `netlify/functions/` contains the model metadata and evaluation endpoint.
+- `model/merged-huggingface/` contains the Hugging Face-style model configuration and supporting artifacts.
 - `model/clip-alignment/` contains the final CLIP alignment checkpoints.
 - `model/moco-resnet50/` contains the final MoCo ResNet50 checkpoints.
-- `evaluation/` contains final LLM evaluation metrics and per-sample outputs.
-- `evaluation/clip-alignment/` contains CLIP retrieval, embedding, similarity, and training-log outputs.
-- `evaluation/moco-resnet50/` contains MoCo ResNet50 training metrics.
-- `training/` contains the final LLM training configuration plus CLIP alignment and MoCo ResNet50 training code.
+- `evaluation/` contains model evaluation summaries and per-sample outputs.
+- `training/` contains training configuration and supporting training scripts.
+- `streamlit_app.py` and `ct_chat_streamlit_app.py` provide local inference UIs.
 
-## Deployment Notes
+## External Model Weights
 
-The model includes multi-GB binary files. GitHub requires Git LFS for these files, and GitHub LFS rejects individual objects larger than 2 GB. The final `model/merged-huggingface/model.safetensors` file is therefore intentionally excluded from this repository and should be hosted externally or restored locally before running full inference. Netlify Functions are not suitable for running this model directly because they do not provide GPU inference or enough package/runtime capacity for local 3D medical LLM inference.
+GitHub LFS rejects individual files larger than 2 GB. The final merged LLM weight is therefore intentionally excluded from the repository:
 
-For a no-cost deployment path, see `FREE_DEPLOYMENT.md`.
+```text
+model/merged-huggingface/model.safetensors
+```
 
-Recommended deployment pattern:
+Local file size: `2,669,529,114` bytes.
 
-1. Commit this repository with Git LFS enabled.
-2. Host the excluded `model.safetensors` file and inference runtime on a GPU service such as Hugging Face Inference Endpoints, RunPod, Modal, AWS SageMaker, or a private GPU server.
-3. Deploy the `public/` site to Netlify.
-4. Point the Netlify site or serverless functions to that external inference API.
+Upload this file to Google Drive or another external storage provider, then add the share link here:
 
-## Local Verification
+```text
+Google Drive model.safetensors link: TODO
+```
+
+To restore full local inference after cloning the repository, download the file and place it at:
+
+```text
+model/merged-huggingface/model.safetensors
+```
+
+The remaining large files are tracked with Git LFS.
+
+## Use The Static Demo
+
+Install dependencies and verify the package:
 
 ```bash
 npm install
 npm run verify
 ```
 
-## Local Streamlit Deployment
+Run the Netlify development server:
 
-This package includes a local Streamlit deployment app that uses the final merged LLM:
+```bash
+npm run dev
+```
+
+The homepage displays the deployment demo video from:
+
+```text
+public/deployment-demo.mp4
+```
+
+## Use The Local Inference App
+
+Install Python dependencies:
 
 ```bash
 pip install -r requirements.txt
+```
+
+Make sure the external `model.safetensors` file has been restored to `model/merged-huggingface/`, then run:
+
+```bash
 streamlit run streamlit_app.py
 ```
 
-For full setup instructions, see `STREAMLIT_DEPLOYMENT_README.md`.
-
-## CT-CHAT Style Deployment
-
-The original Streamlit app is preserved. A second CT-CHAT-style local UI is available:
+For the CT-CHAT-style interface, run:
 
 ```bash
 streamlit run ct_chat_streamlit_app.py --server.port 8502
 ```
 
-For details, see `CT_CHAT_DEPLOYMENT_README.md`.
+Detailed Streamlit notes are available in `STREAMLIT_DEPLOYMENT_README.md` and `CT_CHAT_DEPLOYMENT_README.md`.
 
-## Git LFS Setup
+## Deployment Notes
 
-```bash
-git lfs install
-git lfs track "*.safetensors" "*.pt" "*.pth" "*.bin" "*.model"
-git add .gitattributes
-```
+Netlify is suitable for the static homepage and lightweight metadata endpoint. Full model inference should run on a GPU-backed service such as Hugging Face Inference Endpoints, RunPod, Modal, AWS SageMaker, or a private GPU server.
+
+Recommended deployment pattern:
+
+1. Host the excluded `model.safetensors` file and inference runtime on a GPU service.
+2. Deploy the `public/` site to Netlify.
+3. Point the frontend or serverless endpoint to the external inference API.
+
+For a no-cost deployment path, see `FREE_DEPLOYMENT.md`.
 
 ## Source Model
 
-Final source folder:
+Base model:
 
-`C:\MTI Research\M3D-LaMed\lamed_phi3_resnet50_impression`
+```text
+GoodBaiBai88/M3D-LaMed-Phi-3-4B
+```
 
-Packaged folder:
+Original local source folder:
 
-`model/merged-huggingface/`
-
-Additional packaged research components:
-
-- CLIP alignment training code: `training/clip-alignment/`
-- CLIP alignment checkpoints: `model/clip-alignment/`
-- CLIP alignment evaluation: `evaluation/clip-alignment/`
-- MoCo ResNet50 training code: `training/moco-resnet50/`
-- MoCo ResNet50 checkpoints: `model/moco-resnet50/`
-- MoCo ResNet50 evaluation: `evaluation/moco-resnet50/`
+```text
+C:\MTI Research\M3D-LaMed\lamed_phi3_resnet50_impression
+```

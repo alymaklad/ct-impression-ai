@@ -1,5 +1,5 @@
 {
-  "project_name": "M3D-LaMed Impression Deployment",
+  "project_name": "CT Impression AI",
   "model_name": "M3D-LaMed Phi-3 ResNet50 Impression",
   "base_model": "GoodBaiBai88/M3D-LaMed-Phi-3-4B",
   "model_directory": "model/merged-huggingface",

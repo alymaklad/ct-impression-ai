@@ -27,7 +27,7 @@ WINDOWS = {
 }
 
 st.set_page_config(
-    page_title="M3D-LaMed CT Report Generator",
+    page_title="CT Impression AI",
     layout="wide",
     initial_sidebar_state="collapsed",
 )

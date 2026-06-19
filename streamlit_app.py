@@ -20,7 +20,7 @@ LLM_METRICS_PATH = PROJECT_ROOT / "evaluation" / "evaluation_results.json"
 
 
 st.set_page_config(
-    page_title="M3D-LaMed Impression Inference",
+    page_title="CT Impression AI",
     layout="wide",
 )
 
@@ -56,7 +56,7 @@ def file_status(path: Path) -> tuple[str, str]:
 manifest = load_json(MANIFEST_PATH)
 llm_metrics = load_json(LLM_METRICS_PATH)
 
-st.title("M3D-LaMed Phi-3 ResNet50 Impression Inference")
+st.title("CT Impression AI")
 st.caption("Local deployment using the final merged LLM and packaged 3D vision components.")
 
 with st.sidebar:

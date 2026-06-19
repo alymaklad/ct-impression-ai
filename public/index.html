@@ -3,30 +3,34 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>M3D-LaMed Impression Model</title>
+    <title>CT Impression AI</title>
     <link rel="stylesheet" href="/styles.css">
   </head>
   <body>
     <main class="shell">
       <section class="overview">
         <div class="intro">
-          <p class="eyebrow">Final Model Package</p>
-          <h1>M3D-LaMed Phi-3 ResNet50 Impression</h1>
-          <p class="summary">A Netlify-ready project wrapper for the final 3D CT impression generation model, with model metadata, evaluation results, and deployment configuration.</p>
+          <p class="eyebrow">3D CT Report Generation</p>
+          <h1>CT Impression AI</h1>
+          <p class="summary">A deployment package for generating radiology-style CT impressions from 3D medical volumes, with model metadata, evaluation results, and a hosted project demo.</p>
         </div>
         <div class="status-card">
-          <span class="status-dot"></span>
+          <span class="status-dot" aria-hidden="true"></span>
           <div>
-            <strong>Deployment package ready</strong>
-            <span>Static site plus serverless metadata endpoint</span>
+            <strong>Project demo ready</strong>
+            <span>Static homepage, evaluation metrics, and model metadata endpoint</span>
           </div>
         </div>
       </section>
 
       <section class="demo" aria-label="Deployment demo video">
-        <video controls preload="metadata" poster="" aria-label="M3D-LaMed deployment demo">
+        <div class="section-heading">
+          <p class="eyebrow">Demo Video</p>
+          <h2>Deployment Walkthrough</h2>
+        </div>
+        <video controls preload="metadata" aria-label="CT Impression AI deployment demo">
           <source src="/deployment-demo.mp4" type="video/mp4">
-          Your browser does not support the video tag.
+          <a href="/deployment-demo.mp4">Download the deployment demo video.</a>
         </video>
       </section>
 
@@ -48,7 +52,7 @@
       <section class="details">
         <h2>Repository Layout</h2>
         <div class="file-list">
-          <div><strong>model/merged-huggingface</strong><span>Final merged model artifacts</span></div>
+          <div><strong>model/merged-huggingface</strong><span>Model configuration and supporting artifacts</span></div>
           <div><strong>evaluation</strong><span>Evaluation metrics and per-sample results</span></div>
           <div><strong>training</strong><span>Training configuration used for the final run</span></div>
           <div><strong>netlify/functions</strong><span>Serverless metadata endpoint</span></div>
