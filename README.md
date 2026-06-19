@@ -6,9 +6,9 @@ The project includes a Netlify-ready static homepage, a serverless metadata endp
 
 ## Demo Video
 
-<video src="https://github.com/alymaklad/m3d-lamed-impression-deployment/raw/main/public/deployment-demo.mp4" controls width="100%"></video>
+![CT Impression AI deployment demo](public/deployment-demo-preview.gif)
 
-[Open the deployment demo video](https://github.com/alymaklad/m3d-lamed-impression-deployment/raw/main/public/deployment-demo.mp4)
+[Open the full deployment demo video](public/deployment-demo.mp4)
 
 ## What Is Included
 
