@@ -29,11 +29,26 @@ model/merged-huggingface/model.safetensors
 
 Local file size: `2,669,529,114` bytes.
 
-Upload this file to Google Drive or another external storage provider, then add the share link here:
+The model weights are stored in Google Drive:
+
+- [CT Impression AI Weights](https://drive.google.com/drive/folders/1OHFWWImzKr2ieTvVauLILBg2zl0s2pfO)
+
+Uploaded folder on the development machine:
 
 ```text
-Google Drive model.safetensors link: TODO
+H:\My Drive\CT Impression AI Weights
 ```
+
+The Drive folder contains:
+
+- `model.safetensors`
+- `vision_encoder_ft.pt`
+- `projector.pt`
+- `tokenizer.model`
+- `clip_alignment_best_model.pt`
+- `clip_alignment_final_model.pt`
+- `moco_resnet50_best_checkpoint.pth`
+- `moco_resnet50_final_checkpoint.pth`
 
 To restore full local inference after cloning the repository, download the file and place it at:
 
